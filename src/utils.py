@@ -225,7 +225,7 @@ def normalize_(x, dim=1):
     '''
     Projects points to a sphere inplace.
     '''
-    x.div_(x.norm(2, dim=dim).expand_as(x))
+    x.div_(x.norm(2, dim=dim).unsqueeze(1).expand_as(x))
 
 
 def normalize(x, dim=1):
