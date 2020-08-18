@@ -1,1 +1,7 @@
 *.pyc
+data
+readme_pics
+models
+pretrained
+logs
+samples

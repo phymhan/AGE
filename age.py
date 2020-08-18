@@ -199,7 +199,7 @@ for epoch in range(opt.start_epoch, opt.nepoch):
             # Save some stats
             stats['real_mean'] = KL_minimizer.samples_mean.data.mean()
             stats['real_var'] = KL_minimizer.samples_var.data.mean()
-            stats['KL_real'] = KL_real.data[0]
+            stats['KL_real'] = KL_real.item()
 
             # ================================================
 
@@ -222,7 +222,7 @@ for epoch in range(opt.start_epoch, opt.nepoch):
             # Save some stats
             stats['fake_mean'] = KL_maximizer.samples_mean.data.mean()
             stats['fake_var'] = KL_maximizer.samples_var.data.mean()
-            stats['KL_fake'] = -KL_fake.data[0]
+            stats['KL_fake'] = -KL_fake.item()
 
             # Update e
             sum(e_losses).backward()
